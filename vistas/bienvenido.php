@@ -17,6 +17,6 @@
 </head>
 <body>
     <h1>Has iniciado sesion correctamente <?php echo $_SESSION["usuario"] ?></h1>
-    <a href="cerrarSesion.php">Cerrar sesion</a>
+    <a href="../acciones/cerrarSesion.php">Cerrar sesion</a>
 </body>
 </html>

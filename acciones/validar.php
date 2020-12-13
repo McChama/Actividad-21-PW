@@ -11,14 +11,15 @@
     $resultado = mysqli_query($conexion,$consulta);
     $filas = mysqli_num_rows($resultado);
 
-    /* Validar sesion */
-    $_SESSION["usuario"] = $usuario;
-
     if($filas > 0){
-        header("Location:bienvenido.php");
+        /* Validar sesion */
+        $_SESSION["usuario"] = $usuario;
+        header("Location:vistas/bienvenido.php");
     }
     else{
-        header("Location:noValido.php");
+        /* Validar sesion */
+        $_SESSION["usuario"] = '';
+        header("Location:../vistas/noValido.php");
     }
     mysqli_free_result($resultado);
     mysqli_close($conexion);
