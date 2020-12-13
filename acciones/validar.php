@@ -19,7 +19,7 @@
     else{
         /* Validar sesion */
         $_SESSION["usuario"] = '';
-        header("Location:../vistas/noValido.php");
+        header("Location:../index.php?noValido=true");
     }
     mysqli_free_result($resultado);
     mysqli_close($conexion);
