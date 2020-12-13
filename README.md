@@ -5,3 +5,5 @@ Investigar y describir con ejemplos los siguientes 5 puntos sobre las sesiones e
 - Definir el valor de una variable en sesión
 - Obtener el valor de una variable en sesión
 - Cerrar sesión
+
+Pagina en accion: https://mcchama.000webhostapp.com/
