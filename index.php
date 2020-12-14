@@ -3,14 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bulma framework -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <!-- jQuery library-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <!-- Iconos -->
-    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-
+    <?php include("meta/librerias.php"); ?>
     <script src="scripts/index.js"></script>
     <link rel="stylesheet" href="estilos/estilos.css">
     <title>Acitivdad 21 PW</title>
@@ -34,8 +27,7 @@
                                     <p class="title is-4 has-text-centered">Iniciar sesion</p>
                                     
                                     <?php
-                                        if(isset($_GET["noValido"])){
-                                            $noValido = $_GET["noValido"];
+                                        if(isset($_GET["noValido"]) && !(isset($_SESSION["usuario"]))){
                                             include("vistas/errorLogin.php");
                                         }      
                                     ?>
