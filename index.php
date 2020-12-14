@@ -16,11 +16,11 @@
 
                     <div class="is-flex is-horizontal-centered ">
                         <figure class="image is-128x128">
-                            <img class="is-rounded" src="media/perfil.jpg" alt="fotoPerfil">
+                            <img id="is-circle" class="is-rounded" src="media/perfil.jpg" alt="fotoPerfil">
                         </figure>
                     </div>
 
-                    <div class="card pt-3">
+                    <div class="card pt-6">
                         <div class="card-content">
                             <div class="media pb-1">
                                 <div class="media-content">
