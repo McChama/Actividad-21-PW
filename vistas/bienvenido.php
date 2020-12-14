@@ -1,6 +1,7 @@
 <?php
     session_start();
     $varSesion = $_SESSION["usuario"];
+    $nombreUsuario = $_SESSION["nombreUsuario"];
 
     if($varSesion == null || $varSesion == ''){
         session_destroy();
@@ -29,7 +30,7 @@
                             <div class="media pb-1">
                                 <div class="media-content">
                                     <h1 class="title is-4 has-text-centered">Bienvenido</h1>
-                                    <p>Has iniciado sesion correctamente <?php echo $_SESSION["usuario"] ?></p>
+                                    <p>Un gusto volver a verte <strong><?php echo $nombreUsuario ?></strong></p>
                                     <a href="../acciones/cerrarSesion.php">Cerrar sesion</a>
                                 </div>
                             </div>

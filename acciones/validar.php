@@ -1,7 +1,7 @@
 <?php
     /* Iniciar sesion */
     session_start();
-
+    
     $usuario = $_POST["usuario"];
     $pass = $_POST["pass"];
 
@@ -14,13 +14,27 @@
 
     if($filas > 0){
         /* Validar sesion */
+        $nombreUsuario = mysqli_fetch_array($resultado);
+        $_SESSION["nombreUsuario"] = $nombreUsuario["nombre"];
         $_SESSION["usuario"] = $usuario;
         header("Location:../vistas/bienvenido.php");
     }
     else{
-        /* Validar sesion */
-        session_destroy();
-        header("Location:../index.php?noValido=true");
+        if(isset($_SESSION["usuario"])){
+            header("Location: ../vistas/bienvenido.php");
+        }else{
+            if(!isset($_SESSION["usuario"])){
+                session_destroy();
+                header("Location:../index.php");
+            }
+            else{
+                /* Validar sesion */
+                session_destroy();
+                header("Location:../index.php?noValido=true");
+            }
+            
+        }
+       
     }
     mysqli_free_result($resultado);
     mysqli_close($conexion);
