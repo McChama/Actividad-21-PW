@@ -1,3 +1,10 @@
+<?php
+   if(session_start()){
+       if(isset($_SESSION["usuario"])){
+           header("Location: vistas/bienvenido.php");
+       }
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

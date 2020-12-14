@@ -3,8 +3,8 @@
     $varSesion = $_SESSION["usuario"];
 
     if($varSesion == null || $varSesion == ''){
-        include("noValido.php");
-        die();
+        session_destroy();
+        header("Location: noValido.php");
     }
 
 ?>
@@ -28,8 +28,8 @@
                         <div class="card-content">
                             <div class="media pb-1">
                                 <div class="media-content">
-                                    <p class="title is-4 has-text-centered">Bienvenido</p>
-                                    <h1>Has iniciado sesion correctamente <?php echo $_SESSION["usuario"] ?></h1>
+                                    <h1 class="title is-4 has-text-centered">Bienvenido</h1>
+                                    <p>Has iniciado sesion correctamente <?php echo $_SESSION["usuario"] ?></p>
                                     <a href="../acciones/cerrarSesion.php">Cerrar sesion</a>
                                 </div>
                             </div>
